@@ -6,8 +6,4 @@ import math
 
 def fun_distance(x1, y1, x2, y2):
 	# your code goes here
-	if x1==x2 and y1==y2:
-		return 0
-	else:
-		# dist=0
 		return math.sqrt(((y2-y1)**2) + ((x2-x1)**2))
