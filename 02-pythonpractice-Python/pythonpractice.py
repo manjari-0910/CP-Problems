@@ -26,6 +26,6 @@ class Classy(object):
     def classiness(self):
         score=0
         for i in self.items:
-            if i in self.score:
+            if i in self.scores:
                 score+=self.scores[i]
         return score
