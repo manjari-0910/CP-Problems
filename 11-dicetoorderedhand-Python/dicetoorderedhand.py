@@ -13,4 +13,9 @@
 
 def dicetoorderedhand(a, b, c):
 	# your code goes here
+	li=[a,b,c]
+	li.sort()
+	li=list(map(str,li[::-1]))
+	num=''.join(li)
+	return int(num)
 	pass
