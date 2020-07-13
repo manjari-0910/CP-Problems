@@ -10,4 +10,4 @@ def fun_distance(x1, y1, x2, y2):
 		return 0
 	else:
 		# dist=0
-		return math.sqrt((math.pow(y2-y1),2) + (math.pow(x2-x1),2))
+		return int(math.sqrt(math.pow((y2-y1),2) + math.pow((x2-x1),2)))
