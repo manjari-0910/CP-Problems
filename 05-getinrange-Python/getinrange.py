@@ -3,12 +3,12 @@
 # If x is between the two bounds, just return it unmodified. Otherwise,
 # if x is less than the lower bound, return the lower bound,
 # or if x is greater than the upper bound, return the upper bound.
-import math
+
 def fun_getinrange(x, bound1, bound2):
 	# your code goes here
 	if (bound1>x and x>bound2) or (bound1<x and x<bound2):
 		return x
-	elif x<math.min(bound1,bound2):
-		return math.min(bound1,bound2)
-	elif x>math.max(bound1,bound2):
-		return math.max(bound1,bound2)
+	elif x<min(bound1,bound2):
+		return min(bound1,bound2)
+	elif x>max(bound1,bound2):
+		return max(bound1,bound2)
