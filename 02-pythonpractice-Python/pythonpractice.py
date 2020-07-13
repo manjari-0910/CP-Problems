@@ -18,3 +18,14 @@ Use the test cases below to guide you!"""
 class Classy(object):
     def __init__(self):
         self.items = []
+        self.scores= {"tophat":2,"bowtie": 4,"monocle": 5}
+
+    def addItem(self,name):
+        self.items.append(name)
+
+    def classiness(self):
+        score=0
+        for i in self.items:
+            if i in self.score:
+                score+=self.scores[i]
+        return score
