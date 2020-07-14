@@ -52,7 +52,7 @@ class stack(object):
         temp=self.ll.head
         while temp.next!=None:
             temp=temp.next
-        tail=temp.next
+        tail=temp.next.value
         temp.next=None
         return tail
         pass
