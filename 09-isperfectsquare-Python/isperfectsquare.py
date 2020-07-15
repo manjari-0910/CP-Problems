@@ -19,4 +19,3 @@ def isperfectsquare(n):
 		else:
 			return False
 	pass
-
