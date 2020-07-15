@@ -5,9 +5,6 @@
 # each row starts at column 0. If either row or col
 # are not legal values, return None, instead of crashing.
 
-
-
-
 def fun_pascaltrianglevalue(row, col):
 	li=[[1],[1,1]]
 	for i in range (2,row+1):
