@@ -14,7 +14,7 @@ def fun_nthfibonaccinumber(n):
 	else:
 		f=1
 		s=1
-		for i in range (n):
+		for i in range (1,n):
 			temp=f+s
 			f=s
 			s=temp
