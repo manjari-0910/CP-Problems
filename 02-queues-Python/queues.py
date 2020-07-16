@@ -23,4 +23,5 @@ class Queue:
 
         temp=self.storage[0]
         self.storage=self.storage[1:]
+        return temp
         pass
