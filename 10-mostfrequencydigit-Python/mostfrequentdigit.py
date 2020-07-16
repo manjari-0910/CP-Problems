@@ -13,17 +13,17 @@ def mostfrequentdigit(n):
 			d[i] = 1
 	s=""
 	max=0
-	same=[]
 	for i in d:
 		if d[i]>max:
 			max=d[i]
 			s=i
+	same=[]
 	for i in d:
 		if d[i]==max:
-			same.append(d)
-	same = list(map(int,same))
+			same.append(int(i))
 	if len(same)>1:
 		return min(same)
+
 	if max==1:
 		return int(n[0])
 	else:
