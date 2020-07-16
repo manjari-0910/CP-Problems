@@ -18,6 +18,9 @@ class Queue:
         pass
 
     def dequeue(self):
+        if len(self.storage)==0:
+            return None
+
         temp=self.storage[0]
         self.storage=self.storage[1:]
         pass
