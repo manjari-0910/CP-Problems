@@ -39,7 +39,6 @@ class LinkedList(object):
             self.head=temp.next
             return temp
         pass
-
 class stack(object):
     def __init__(self,top=None):
         self.ll = LinkedList(top)
