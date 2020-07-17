@@ -5,4 +5,14 @@
 
 def removeduplicate(text):
 	# Your code goes here
+	if len(text)<=1:
+		return text
+	else:
+		d={}
+		for i in text:
+			if i in d:
+				d[i]+=1
+			else:
+				d[i]=1
+		return ''.join(list(d.keys()))
 	pass
