@@ -7,11 +7,14 @@
 
 def issorted(a):
 	# your code goes here
+	flag=True
 	for i in range(len(a)-1):
 		if a[i]>a[i+1]:
-			return False
-	for i in range(len(a)-1):
-		if a[i]<a[i+1]:
-			return False
+			flag =False
+	if flag==False:
+		b=a[::-1]
+		for i in range(len(a)-1):
+			if b[i]>b[i+1]:
+				return False
 	return True
 	pass
