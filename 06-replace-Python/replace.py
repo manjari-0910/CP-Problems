@@ -19,13 +19,11 @@ def fun_replace(s1, s2, s3):
 			s+=s1[i1+len(s2):]
 		else:
 			c=multipletimes(s1,s2)
-			i1=0
 			while c!=0:
 				i1=s1[i1+len(s2):].index(s2)
 				s=s1[:i1]
 				s+=s3
-				s+=s1[i1+len(s2):]
-				c-=1
+				s+=fun_replace (s1[i1+len(s2):],s2)
 		return s
 	except:
 		return s1
