@@ -15,6 +15,6 @@ def smallestdifference(a):
 	# return abs(min1-min2)
 	min1=min(a)
 	i=a.index(min1)
-	min2=min(a[i+1:])
-	return abs(min2-min1)
+	min2=min(min(a[i+1:]),min(a[:i]))
+	return (min1-min2)
 	pass
