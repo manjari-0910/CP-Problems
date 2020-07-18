@@ -12,32 +12,58 @@ class Element(object):
     def __init__(self, value):
         self.value = value
         self.next = None
-        
+
 class LinkedList(object):
     def __init__(self, head=None):
         self.head = head
-        
+        self.tail = head
+
     def append(self, new_element):
         # Your code goes here
+        if self.head==None:
+            self.head=new_element
+            self.tail=self.head
+        elif self.head==self.tail:
+            self.tail.next=new_element
+            self.tail=self.tail.next
         pass
-            
+
     def get_position(self, position):
         """Get an element from a particular position.
         Assume the first position is "1".
         Return "None" if position is not in the list."""
         # Your code goes here
+        count=1
+        temp=self.head
+        while temp!=None:
+            count+=1
+            temp=temp.next
+        return count
         pass
-    
+
     def insert(self, new_element, position):
         """Insert a new node at the given position.
         Assume the first position is "1".
         Inserting at position 3 means between
         the 2nd and 3rd elements."""
         # Your code goes here
+        count=1
+        temp=self.head
+        while count!=position:
+            count+=1
+            temp=temp.next
+        a=temp
+        b=temp.next
+        temp.next=new_element
+        new_element.next=b
         pass
-    
-    
+
+
     def delete(self, value):
         """Delete the first node with a given value."""
         # Your code goes here
+        temp=self.head
+        while temp!=None or temp.next.value!=value:
+            temp=temp.next
+        temp.next=temp.next.next
         pass
