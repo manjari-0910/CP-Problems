@@ -28,12 +28,15 @@ class HashTable(object):
         hv=self.calculate_hash_value(string)
         if self.table[hv] == string:
             return hv
-        while self.table[hv] != string:
-            if hv>len(self.table):
+        while hv<len(self.table):
+            if self.table[hv] != string:
+                hv+=1
+            else:
                 break
-            hv+=1
-            if self.table[hv] == string:
-                return hv
+        if hv>len(self.table)-1:
+            return -1
+        if self.table[hv] == string:
+            return hv
         pass
 
     def calculate_hash_value(self, string):
