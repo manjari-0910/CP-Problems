@@ -5,8 +5,8 @@ import pytest
 
 
 @pytest.mark.parametrize('s1, s2, result',[
-(" a b c de fgh ",  4, "a-b-,c-de,-fgh"),
- ("  abcdefghij", 4, "abcd,efgh,ij")
+(" a b c de fgh ",  4, "a-b-\nc-de\n-fgh"),
+ ("  abcdefghij", 4, "abcd\nefgh\nij")
 ])
 def test_fun_wordwrap(s1, s2, result):
     assert fun_wordwrap(s1, s2) == result
