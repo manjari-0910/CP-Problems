@@ -12,14 +12,17 @@
 
 
 def fun_isfactorish(n):
-	if len(str(abs(n)))!=3 or n<0:
+	if len(str(abs(n)))!=3:
 		return False
 	else:
-		num=n
-		while n!=0:
-			rem=n%10
-			n=n//10
-			if num%rem!=0:
-				return False
-		return True
+	    li= list(str(abs(n)))
+	    li=list(map(int,li))
+	    if len(li)!=len(set(li)):
+	        return False
+	    for i in li:
+	        if i==0:
+	            return False
+	        elif n%i!=0:
+	            return False
+	    return True
 
