@@ -20,12 +20,12 @@ def fun_wordwrap(s, n):
 	s=s.strip()
 	word=""
 	for i in range(0,len(s),n):
-	   # print (s[i])
-	    word+=s[i:i+n]
-	    word+='\n'
-	word=list(word)
-	for i in range(len(word)):
-	    if word[i]==' ':
-	        word[i]='-'
-	word=''.join(word)
-	return word
+	   for j in range(i,i+n):
+	       if j>=len(s):
+	           break
+	       if s[j]==' ':
+	           word+='-'
+	       else:
+	           word+=s[j]
+	   word+='\n'
+	return word.strip()
