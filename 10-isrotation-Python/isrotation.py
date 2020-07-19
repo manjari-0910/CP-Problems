@@ -11,6 +11,8 @@ def isrotation(x, y):
 	y=str(y)
 	if len(x)!=len(y):
 		return False
+	elif x==y[::-1]:
+		return True
 	else:
 		c=x
 		x=x[-1]+x[:len(x)-1]
