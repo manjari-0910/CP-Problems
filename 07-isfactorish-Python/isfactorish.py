@@ -12,7 +12,7 @@
 
 
 def fun_isfactorish(n):
-	if len(str(abs(n)))!=3:
+	if len(str(n))!=3:
 		return False
 	else:
 		num=n
