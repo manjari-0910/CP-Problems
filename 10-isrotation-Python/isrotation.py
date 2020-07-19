@@ -7,13 +7,15 @@
 
 def isrotation(x, y):
 	# Your code goes here
+	x=str(x)
+	y=str(y)
 	if len(x)!=len(y):
 		return False
 	else:
 		c=x
-		x=x[-1]+x[:len(x)-2]
+		x=x[-1]+x[:len(x)-1]
 		while (c!=x):
-			x=x[-1]+x[:len(x)-2]
+			x=x[-1]+x[:len(x)-1]
 			if x==y:
 				return True
 		return False
