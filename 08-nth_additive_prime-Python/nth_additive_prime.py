@@ -5,6 +5,8 @@
 # import sympy
 
 def isprime(n):
+	if n<=1:
+		return False
 	for i in range(2,(n//2)+1):
 		if n%i==0:
 			return False
@@ -22,4 +24,4 @@ def fun_nth_additive_prime(n):
 		if isprime(num) and addprime(num):
 			n-=1
 		num+=1
-	return num
+	return num-1
