@@ -35,19 +35,23 @@ class BinaryTree(object):
         # else:
         #     if find_val<start.value:
 
-        if find_val==start.value:
-            return True
-        elif find_val<=start.value:
-            if start.left is not None:
-                self.preorder_search(self.root.left,find_val)
-            else:
-                return False
+        if start.value is None:
+            return False
         else:
-            if start.right is not None:
-                self.preorder_search(self.root.right,find_val)
-            else:
-                return False
-        pass
+            if find_val==start.value:
+                return True
+            if start.value is not None:
+                if find_val<start.value:
+                    if start.left is not None:
+                        self.preorder_search(self.root.left,find_val)
+                    else:
+                        return False
+                else:
+                    if start.right is not None:
+                        self.preorder_search(self.root.right,find_val)
+                    else:
+                        return False
+            pass
 
     def preorder_print(self, start, traversal):
         """Helper method - use this to create a
