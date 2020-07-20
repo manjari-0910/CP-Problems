@@ -1,5 +1,5 @@
-# First, you can read about look-and-say numbers here. Then, write the function lookAndSay(a) that takes a list of 
-# numbers and returns a list of numbers that results from "reading off" the initial list using the look-and-say 
+# First, you can read about look-and-say numbers here. Then, write the function lookAndSay(a) that takes a list of
+# numbers and returns a list of numbers that results from "reading off" the initial list using the look-and-say
 # method, using tuples for each (count, value) pair. For example:
 # lookAndSay([]) == []
 # lookAndSay([1,1,1]) == [(3,1)]
@@ -9,4 +9,12 @@
 
 def lookandsay(a):
 	# Your code goes here
+	if len(a)==0:
+		return []
+	else:
+		li=[]
+		for i in a:
+			if (a.count(i),i) not in li:
+				li.append((a.count(i),i))
+		return li
 	pass
