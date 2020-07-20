@@ -20,5 +20,6 @@ def ismostlymagicsquare(a):
 	a1=arr.sum(axis=1)
 	a2=arr.sum(axis=0)
 	a3=np.trace(arr)
-	return min(a1)==max(a1) and min(a1)==a3 and min(a2)==max(a2) and min(a2)==a3
+	# if np.all(a1==np.ravel(a1)[0])
+	return np.ravel(a1)[0]==a3 and np.ravel(a2)[0]==a3
 	pass
