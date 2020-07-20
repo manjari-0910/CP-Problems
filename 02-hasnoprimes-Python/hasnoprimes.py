@@ -10,19 +10,19 @@ def isprime(n):
 				return False
 		return True
 
-def fun_isrectangular(l):
-	t = len(l[0])
-	for i in l:
-		if len(i) != t:
-			return False
-	return True
+# def fun_isrectangular(l):
+# 	t = len(l[0])
+# 	for i in l:
+# 		if len(i) != t:
+# 			return False
+# 	return True
 
 def fun_hasnoprimes(l):
-	if fun_isrectangular(l)==False:
-		return False
+	# if fun_isrectangular(l)==False:
+	# 	return False
 	for i in range(len(l)):
 		for j in range(len(l[0])):
-			if isprime(l[i][j])==False:
+			if isprime(l[i][j])==True:
 				return False
 	return True
 
