@@ -5,15 +5,18 @@
 
 
 def fun_kth_occurrences(s, n):
-	d={}
-	for i in s:
-		if i in d:
-			d[i]+=1
-		else:
-			d[i]=1
-	# values=list(d.values())
-	keys=list(d.keys())
-	# ind=values.index(n)
-	return keys[n]
+	s=s.strip()
+	if len(s)==1:
+		return s
+	else:
+		li=[]
+		for i in s:
+			if (s.count(i),i) not in li and i!=' ':
+				li.append((s.count(i),i))
+		li.sort(key=lambda x:x[0],reverse=True)
+		try:
+			return li[n-1][1]
+		except:
+			return li[0][1]
 
 
