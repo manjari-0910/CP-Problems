@@ -14,14 +14,21 @@ def lookandsay(a):
 	else:
 		li=[]
 		count=1
+		Flag=True
+		j=0
 		for i in range(len(a)-1):
 			if a[i]==a[i+1]:
 				count+=1
+				Flag=True
+				j=a[i]
 			else:
 				li.append((count,a[i]))
-				count=0
+				count=1
+				Flag=False
+		if Flag==True:
+		    li.append((count,j))
 
-			# if (a.count(i),i) not in li:
-			# 	li.append((a.count(i),i))
+		if a[-1]!=a[-2]:
+			li.append((1,a[-1]))
 		return li
 	pass
