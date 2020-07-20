@@ -2,31 +2,23 @@
 Input a list.
 Output a sorted list."""
 
-def partition(a,lo,hi):
-	i=lo
-	j=hi+1
+def partition(array,lo,hi):
+	pivot=array[lo]
+	i=lo+1
+	j=hi
 	while True:
-		i+=1
-		while (a[i]<a[lo]):
-			i+=1
-			if i==hi:
-				break
-		j-=1
-		while a[lo]<a[j]:
+		while (i<=j and array[j]>=pivot):
 			j-=1
-			if j==lo:
-				break
-		if (i>=j):
+		while (i<=j and array[i]<=pivot):
+			i+=1
+		if i<=j:
+			array[i],array[j]=array[j],array[i]
+		else:
 			break
-		a=each(a,i,j)
-	a=each(a,lo,j)
-	return j
+	array[lo],array[hi]=array[hi],array[lo]
+	return hi
 
-def each(a,x,j):
-	int a[x],a[y]=a[y],a[x]
-	return a
-
-def quicksort(array,low,high):
+def qsort(array,low,high):
 	if low<high:
 		j=partition(array,low,high)
 		quicksort(arr,low,j-1)
@@ -35,6 +27,6 @@ def quicksort(array,low,high):
 
 def quicksort(array):
 	# Your code goes here
-	quicksort(array,0,len(array)-1)
+	qsort(array,0,len(array)-1)
 	return array
 	pass
