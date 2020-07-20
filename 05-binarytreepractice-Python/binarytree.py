@@ -13,19 +13,7 @@ class BinaryTree(object):
         is in the tree, return
         False otherwise."""
         # Your code goes here
-        # if find_val==self.root.value:
-        #     return True
-        # return self.preorder_search(self.root,find_val)
-        if(self.root.value == find_val):
-            return true
-        if(self.root.left.value == find_val):
-            return true
-        if(self.root.right.value == find_val):
-            return true
-        """Return True if the value
-        is in the tree, return
-        False otherwise."""
-        return False
+        return self.preorder_search(self.root,find_val)
         pass
 
     def print_tree(self):
@@ -33,42 +21,34 @@ class BinaryTree(object):
         as they are visited in
         a pre-order traversal."""
         # Your code goes here
-        self.preorder_print(self.root)
+        r=""
+        traversal = self.preorder_print(self.root,[])
+        for i in traversal:
+            r+=str(i)
+        return r[::-1]
         pass
 
     def preorder_search(self, start, find_val):
         """Helper method - use this to create a
         recursive search solution."""
         # Your code goes here
-        # if start.value==find_val:
-        #     return True
-        # else:
-        #     if find_val<start.value:
-
-        if start.value is None:
-            return False
-        else:
-            if find_val==start.value:
+        if start:
+            if start.value==find_val:
                 return True
-            if start.value is not None:
-                if find_val<start.value:
-                    if start.left is not None:
-                        self.preorder_search(self.root.left,find_val)
-                    else:
-                        return False
-                else:
-                    if start.right is not None:
-                        self.preorder_search(self.root.right,find_val)
-                    else:
-                        return False
-            pass
+            else:
+                return self.preorder_search(start.left,find_val) or self.preorder_search(start.right,find_val)
+        return False
+        pass
 
     def preorder_print(self, start, traversal):
         """Helper method - use this to create a
         recursive print solution."""
         # Your code goes here
         # if start==self.root:
-        print (start.value)
-        self.preorder_print(start.left)
-        self.preorder_print(start.right)
+        if start:
+            traversal.append(start.value)
+            if start.left:
+                self.preorder_print(start.left,traversal)
+            if start.right:
+                self.preorder_print(start.right,traversal)
         pass
