@@ -3,7 +3,7 @@
 # contains any duplicate values (that is,
 # if any two values in L are equal to each other), and False otherwise.
 
-def hasduplicates(L):
+def hasduplicates(l):
 	# Your code goes here
 	li=[]
 	for i in range(len(l)):
