@@ -18,7 +18,7 @@ def addprime(n):
 def fun_nth_additive_prime(n):
 	#code goes here
 	num=1
-	while n>0:
+	while n>=0:
 		if isprime(num) and addprime(num):
 			n-=1
 		num+=1
