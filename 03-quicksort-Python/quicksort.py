@@ -21,8 +21,8 @@ def partition(array,lo,hi):
 def qsort(array,low,high):
 	if low<high:
 		j=partition(array,low,high)
-		quicksort(arr,low,j-1)
-		quicksort(arr,j+1,high)
+		qsort(array,low,j-1)
+		qsort(array,j+1,high)
 	return
 
 def quicksort(array):
