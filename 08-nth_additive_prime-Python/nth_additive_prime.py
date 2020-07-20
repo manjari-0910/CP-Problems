@@ -5,26 +5,21 @@
 # import sympy
 
 def isprime(n):
-	for i in range(2,n//2):
+	for i in range(2,(n//2)+1):
 		if n%i==0:
 			return False
 	return True
 
-def isaddprime(n):
-	li=list(str(n))
-	li=list(map(int,li))
-	return isprime(sum(li))
+def addprime(n):
+	n=list(str(n))
+	n=list(map(int,n))
+	return isprime(sum(n))
 
 def fun_nth_additive_prime(n):
-	if n==0:
-		return 2
-	else:
-		c=0
-		num=1
-		while(c<n):
-			if isprime(num) :
-				if isaddprime(num):
-					c+=1
-			num+=1
-		if c==n:
-			return num
+	#code goes here
+	num=1
+	while n>0:
+		if isprime(num) and addprime(num):
+			n-=1
+		num+=1
+	return num
