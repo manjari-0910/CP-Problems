@@ -13,8 +13,15 @@ def lookandsay(a):
 		return []
 	else:
 		li=[]
-		for i in a:
-			if (a.count(i),i) not in li:
-				li.append((a.count(i),i))
+		count=1
+		for i in range(len(a)-1):
+			if a[i]==a[i+1]:
+				count+=1
+			else:
+				li.append((count,a[i]))
+				count=0
+
+			# if (a.count(i),i) not in li:
+			# 	li.append((a.count(i),i))
 		return li
 	pass
