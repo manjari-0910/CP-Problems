@@ -13,9 +13,19 @@ class BinaryTree(object):
         is in the tree, return
         False otherwise."""
         # Your code goes here
-        if find_val==self.root.value:
-            return True
-        return self.preorder_search(self.root,find_val)
+        # if find_val==self.root.value:
+        #     return True
+        # return self.preorder_search(self.root,find_val)
+        if(self.root.value == find_val):
+            return true
+        if(self.root.left.value == find_val):
+            return true
+        if(self.root.right.value == find_val):
+            return true
+        """Return True if the value
+        is in the tree, return
+        False otherwise."""
+        return False
         pass
 
     def print_tree(self):
