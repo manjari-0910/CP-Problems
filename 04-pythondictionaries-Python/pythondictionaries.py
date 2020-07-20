@@ -35,6 +35,9 @@ def sortUSA():
     locations['North America']['USA'].sort()
     return locations['North America']['USA']
 def alphaAsia():
-    asiaKeys=list((locations['Asia']).keys())
-    li=[locations['Asia'][i] for i in asiaKeys]
-    cities={}
+    country=locations['Asia']
+    li=[]
+    for i in country:
+        li.append(f"{locations['Asia'][i][0]} - {i}")
+    li.sort()
+    return li
