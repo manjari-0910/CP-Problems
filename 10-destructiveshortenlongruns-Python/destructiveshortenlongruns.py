@@ -18,8 +18,8 @@ def destructiveshortenlongruns(L, k):
 	for i in range (len(L)-2):
 		if L[i]==L[i+1]:
 			c+=1
-		if c>k:
-			L.pop(i)
+		if c>=k:
+			print(L.pop(i))
 			i=i-1
 	return L
 	pass
