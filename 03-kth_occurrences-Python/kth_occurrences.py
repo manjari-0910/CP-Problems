@@ -9,10 +9,11 @@ def fun_kth_occurrences(s, n):
 	for i in s:
 		if i in d:
 			d[i]+=1
-			if d[i]==n:
-				return i
 		else:
 			d[i]=1
-	# return 'a'
+	# values=list(d.values())
+	keys=list(d.keys())
+	# ind=values.index(n)
+	return keys[n]
 
 
