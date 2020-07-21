@@ -8,7 +8,7 @@ def fun_matrixmultiply(m1, m2):
     a=np.matrix(m1)
     b=np.matrix(m2)
     try:
-        return a.dot(b)
+        return a.dot(b).tolist()
     except:
         return None
 
