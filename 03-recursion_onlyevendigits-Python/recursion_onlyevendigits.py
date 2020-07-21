@@ -15,16 +15,17 @@ def evenonly(l,a,i):
 	if i==len(l):
 		return a
 	else:
-		n=l[i]
-		li=[]
-		for i in range (len(l[i])):
-			rem=n%10
-			n=n//10
-			if rem%2==0:
-				li.append(rem)
-		li=list(map(str,li[::-1]))
-		li2=''.join(li)
-		if int(li2)%2==0:
+		li=list(str(l[i]))
+		li=list(map(int,li))
+		li2=[]
+		for j in li:
+			if j%2==0:
+				li2.append(j)
+		li2=list(map(str,li2))
+		li2=''.join(li2)
+		if len(li2)==0:
+			a.append(0)
+		elif int(li2)%2==0:
 			a.append(int(li2))
 		i+=1
 		return evenonly(l,a,i)
