@@ -14,7 +14,7 @@ def power3(n,l,i):
 			return None
 		return l
 	else:
-		if 3**i<n:
+		if 3**i<=n:
 			l.append(3**i)
 		i+=1
 		return power3(n,l,i)
