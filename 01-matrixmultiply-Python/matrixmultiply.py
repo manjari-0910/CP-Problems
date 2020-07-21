@@ -7,7 +7,10 @@ import numpy as np
 def fun_matrixmultiply(m1, m2):
     a=np.matrix(m1)
     b=np.matrix(m2)
-    return a.dot(b)
+    try:
+        return a.dot(b)
+    except:
+        return None
 
 
 
