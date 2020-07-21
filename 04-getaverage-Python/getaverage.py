@@ -11,8 +11,6 @@
 
 def fun_getaverage(s):
 	s=s.split(',')
-	print (s)
-	print (float('13'))
 	li=[]
 	for i in s:
 		try:
