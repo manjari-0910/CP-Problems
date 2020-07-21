@@ -5,18 +5,17 @@
 
 
 def fun_recursions_alternatingsum(l):
-	p=[]
-	n=[]
-	p,n =rec(l,0,p,n)
-	return sum(p)-sum(n)
+	sum=0
+	return rec(l,0,sum)
 	# return 0
 
-def rec(l,i,p,n):
-	if i > len(l):
-		return p,n
-	if i%2==0:
-		p.append(i)
+def rec(l,i,sum):
+	if i==len(l):
+		return sum
 	else:
-		n.append(i)
-	i+=1
-	rec(l,i,p,n)
+		if i%2==0:
+			sum+=l[i]
+		else:
+			sum-=l[i]
+		i+=1
+		return rec(l,i,sum)
