@@ -15,7 +15,7 @@
 
 def recursion_secondlargest(L):
 	# Your code goes here
-	if len(l)<2:
+	if len(L)<2:
 		return None
 	return secondsmall(L,0,2147483647,2147483647)
 	pass
