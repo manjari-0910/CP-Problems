@@ -5,7 +5,9 @@
 
 
 def fun_recursions_alternatingsum(l):
-	p,n =rec(l,0,[],[])
+	p=[]
+	n=[]
+	p,n =rec(l,0,p,n)
 	return sum(p)-sum(n)
 	# return 0
 
