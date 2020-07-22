@@ -14,9 +14,12 @@ def fun_carrylessadd(x, y):
 		return x+y
 	else:
 		a=x+y
-		# if len(str(x))==len(str(y)):
-		l=len(str(x))-1
-		a=str(a)[-l:]
-		return (int(a)-10)
-
+		if a%10!=0:
+			l=len(str(x))-1
+			a=str(a)[-l:]
+			return (int(a)-10)
+		elif len(str(x))!=len(str(y)):
+			return a-10
+		else:
+			return 0
 
