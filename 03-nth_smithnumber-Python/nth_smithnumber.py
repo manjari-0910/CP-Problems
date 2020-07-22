@@ -35,7 +35,7 @@ def fun_nth_smithnumber(n):
             s=sum(digits)
             primes=factors(i)
             for j in primes:
-                if isprime(i/j) and j+(i/j)==s:
+                if isprime(i//j) and j+(i//j)==s:
                     count+=1
     return (i)
 
