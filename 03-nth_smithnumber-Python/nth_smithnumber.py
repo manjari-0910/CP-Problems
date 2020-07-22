@@ -28,18 +28,17 @@ def fun_nth_smithnumber(n):
     count=0
     li=[]
     i=4
-    while (count<20):
+    while (count<n):
         if isprime(i)==False:
             digits=list(str(i))
             digits=list(map(int,digits))
             s=sum(digits)
             primes=factors(i)
-            for j in primes:
-                if isprime(i//j) and j+(i//j)==s:
-                    count+=1
-                    li.append(i)
+            if sum(primes==s):
+                count+=1
+                li.append(i)
             i+=1
-    return (li[n])
+    return (i)
 
 
 
