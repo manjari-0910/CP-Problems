@@ -52,5 +52,5 @@ def playstep2(hand, dice):
 		ans.append(h[1])
 		ans.append(d[-1])
 		ans.sort()
-		return int(ans[-1]+ans[-2]+ans[0]),int(d[:-2])
+		return int(ans[-1]+ans[-2]+ans[0]),int(d[:-1])
 	pass
