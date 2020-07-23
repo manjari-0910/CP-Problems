@@ -11,7 +11,7 @@ def findzerowithbisection(x, epsilon):
 	# your code starts here
 	start=0
 	end=x
-	res=x//2
+	res=x/2
 	while (abs(res**2- x) >= epsilon):
 		# if abs(res**2-x-epsilon)<1:
 		if res**2 > x:
