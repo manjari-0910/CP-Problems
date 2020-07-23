@@ -60,11 +60,11 @@ class BST(object):
             return False
         else:
             if start:
-                if find.val==start.value:
+                if find_val==start.value:
                     return True
                 elif find_val<start.value:
                     return self.drivesearch(start.left,find_val)
                 elif find_val>start.value:
-                    return start.drivesearch(start.right,find_val)
+                    return self.drivesearch(start.right,find_val)
         return False
 
