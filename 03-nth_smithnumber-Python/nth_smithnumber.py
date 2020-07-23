@@ -34,7 +34,7 @@ def fun_nth_smithnumber(n):
             digits=list(map(int,digits))
             s=sum(digits)
             primes=factors(i)
-            if sum(primes==s):
+            if sum(primes)==s:
                 count+=1
                 li.append(i)
             i+=1
