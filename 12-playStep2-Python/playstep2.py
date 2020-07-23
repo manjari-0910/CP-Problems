@@ -40,13 +40,13 @@ def playstep2(hand, dice):
 		ans.append(d[-1])
 		ans.append(d[-2])
 		ans.sort()
-		return int(ans[-1]+ans[-2]+ans[0]),int(d[:-2])
+		return int(ans[-1]+ans[-2]+ans[0]),int(d[:-1])
 	elif h.count(h[0])>1:
 		ans.append(h[0])
 		ans.append(h[0])
 		ans.append(d[-1])
 		ans.sort()
-		return int(ans[-1]+ans[-2]+ans[0]),int(d[:-2])
+		return int(ans[-1]+ans[-2]+ans[0]),int(d[:-1])
 	elif h.count(h[1])>1:
 		ans.append(h[1])
 		ans.append(h[1])
