@@ -6,15 +6,17 @@
 # fun_nth_tidynumber(15) = 17
 # fun_nth_tidynumber(35) = 46
 
-def issmall(num):
-    prev = 10
-    while (num):
-        rem = num % 10
-        num /= 10
-        if rem > prev:
-            return False
-        prev = rem
-    return True
+def issmall(n):
+    if n<10:
+        return True
+    else:
+        while(n!=0):
+            rem=n%10
+            n=n//10
+            rem2=n%10
+            if rem2>rem:
+                return False
+        return True
 
 
 def fun_nth_tidynumber(n):
