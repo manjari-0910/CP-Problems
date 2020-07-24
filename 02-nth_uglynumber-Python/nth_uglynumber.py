@@ -16,9 +16,7 @@ def isugly(n):
 def fun_nth_uglynumber(n):
     i=1
     c=1
-    while True:
-        if c==n:
-            break
+    while c<=n:
         i+=1
         if isugly(i):
             c+=1
