@@ -8,7 +8,7 @@
 def sumofsquaresofdigit(n):
 	# Your code goes here
 	sum=0
-	for i in range (len(str(n))-1):
+	while (n!=0):
 		sum+= (n%10)**2
 		n=n//10
 	return sum
