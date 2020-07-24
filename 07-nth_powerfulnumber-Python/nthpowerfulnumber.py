@@ -58,11 +58,20 @@ def getFactorization(x):
 # precalculating Smallest Prime Factor
 sieve()
 
-def nthpowerfulnumber(n):
-	# Your code goes here
+def ispowerful(n):
 	factors=getFactorization(n)
 	for i in factors:
 		if n%(i**2)!=0:
 			return False
 	return True
+
+def nthpowerfulnumber(n):
+	# Your code goes here
+	count=0
+	i=1
+	while (count<=n):
+		if ispowerful(i):
+			count+=1
+		i+=1
+	return i-1
 	pass
