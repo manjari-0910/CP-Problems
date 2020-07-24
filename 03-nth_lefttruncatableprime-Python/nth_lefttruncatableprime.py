@@ -40,9 +40,9 @@ def istrunkprime(i):
 
 def fun_nth_lefttruncatableprime(n):
     i=2
-    while (n>0):
-        if len(str(i))>=1 and istrunkprime(i):
+    while (n>=0):
+        if len(str(i))>=1 and istrunkprime(i) and isprime(i):
             n-=1
         i+=1
 
-    return i
+    return i-1
