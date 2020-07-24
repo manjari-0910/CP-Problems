@@ -8,30 +8,6 @@
 # Hint: you may need to generate only Carol numbers, and then test those as you go
 # for primality (and you may need to think about that hint for a while for it to make sense!).
 
-def isprime(n) :
-
-    # Corner cases
-    if (n <= 1) :
-        return False
-    if (n <= 3) :
-        return True
-
-    # This is checked so that we can skip
-    # middle five numbers in below loop
-    if (n % 2 == 0 or n % 3 == 0) :
-        return False
-
-    i = 5
-    while(i * i <= n) :
-        if (n % i == 0 or n % (i + 2) == 0) :
-            return False
-        i = i + 6
-
-    return True
-
 def fun_nth_carolprime(n):
-    li=[]
-    for k in range(n+2):
-        if isprime((2**k - 1)**2 - 2):
-            li.append(((2**k - 1)**2 - 2))
-    return li[n]
+    k=n+2
+    return ((2**k - 1)**2 - 2)
