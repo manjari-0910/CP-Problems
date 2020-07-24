@@ -9,18 +9,35 @@
 
 import math
 
+def remzeros(n):
+    n=str(n)
+    count=0
+    for i in n[::-1]:
+        if i=='0':
+            count+=1
+        else:
+            break
+
+    return int(n[:len(n)-count])
+
 def iskaprekar(i):
     n=str(i**2)
     if len(n)>1:
-        if i==(int(str(n[:len(n)//2]))+int(str(n[len(n)//2:]))):
+        if i==(int(n[:len(n)//2])+int(n[len(n)//2:])):
             return True
+        else:
+            m=remzeros(n[:len(n)//2])
+            if int(m)+int(n[len(n)//2:])==i:
+                return True
     return False
 
 def fun_nth_kaprekarnumber(n):
-    i=1
-    count=1
+    if n==0:
+        return 1
+    i=9
+    count=0
     while(count<n):
         if iskaprekar(i):
             count+=1
         i+=1
-    return i
+    return i-1
