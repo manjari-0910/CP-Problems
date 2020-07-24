@@ -18,10 +18,16 @@ def issmall(num):
 
 
 def fun_nth_tidynumber(n):
-    c=0
-    i=0
-    while c<=n:
-        if issmall(i):
-            c+=1
-        i+=1
-    return i-1
+    # c=1
+    # i=1
+    # while c<=n:
+    #     if issmall(i):
+    #         c+=1
+    #     i+=1
+    # return i-1
+    j=0
+    for i in range(n):
+        if issmall(i) == False:
+            i-=1
+        j=i
+    return j
