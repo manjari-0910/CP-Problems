@@ -19,7 +19,7 @@ def issmall(num):
 
 def fun_nth_tidynumber(n):
     c=0
-    i=1
+    i=0
     while c<=n:
         if issmall(i):
             c+=1
