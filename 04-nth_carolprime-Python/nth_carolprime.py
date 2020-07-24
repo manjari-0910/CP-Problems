@@ -31,7 +31,7 @@ def isprime(n) :
 
 def fun_nth_carolprime(n):
     li=[]
-    for k in range(n):
+    for k in range(n+2):
         if isprime((2**k - 1)**2 - 2):
             li.append(((2**k - 1)**2 - 2))
     return li[n]
