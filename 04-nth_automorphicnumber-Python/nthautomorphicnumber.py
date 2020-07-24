@@ -12,7 +12,6 @@ def isautomorphic(n):
 
 def nthautomorphicnumbers(n):
 	# Your code goes here
-	n+=1
 	i=0
 	c=0
 	while c<n:
