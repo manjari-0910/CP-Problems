@@ -21,7 +21,8 @@ def rotate(n):
 def nthcircularprime(n):
 	# Your code goes here
 	i=2
-	while (n>=0):
+	count=1
+	while (count<n):
 		if isprime(i):
 			c=1
 			for j in range(len(str(i))):
@@ -29,7 +30,7 @@ def nthcircularprime(n):
 				if isprime(i):
 					c+=1
 		if c==len(str(i)):
-			n-=1
+			count+=1
 		i+=1
 	return i
 
