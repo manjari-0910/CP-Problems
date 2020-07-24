@@ -35,11 +35,10 @@ def fun_nth_uglynumber(n):
     if n==0:
         return 1
     else:
-        i=2
+        i=1
         c=1
-        while c<=n:
+        while c<n:
+            i+=1
             if isugly(i):
                 c+=1
-            i+=1
-
-    return i-1
+    return i
