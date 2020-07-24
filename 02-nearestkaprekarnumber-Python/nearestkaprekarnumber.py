@@ -52,7 +52,7 @@ def fun_nearestkaprekarnumber(n):
         li.append(fun_nth_kaprekarnumber(i))
     for i in range(len(li)-1):
         if n>li[i] and n<li[i+1]:
-            if n-li[i]<=n-li[i+1]:
+            if abs(n-li[i])<=abs(n-li[i+1]):
                 return li[i]
             else:
                 return li[i+1]
