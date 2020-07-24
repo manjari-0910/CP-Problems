@@ -31,6 +31,8 @@ def isprime(n) :
     return True
 
 def istrunkprime(i):
+    if '0' in str(i):
+        return False
     while len(str(i))>1:
         i=int(str(i)[1:])
         if isprime(i)==False:
