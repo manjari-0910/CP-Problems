@@ -11,16 +11,13 @@ def isugly(n):
     n=maxDivide(n,2)
     n=maxDivide(n,3)
     n=maxDivide(n,5)
-    return n==0
+    return n==1
 
 def fun_nth_uglynumber(n):
-    if n==0:
-        return 1
-    else:
-        i=1
-        c=1
-        while c<n:
-            i+=1
-            if isugly(i):
-                c+=1
+    i=1
+    c=1
+    while c<n:
+        i+=1
+        if isugly(i):
+            c+=1
     return i
