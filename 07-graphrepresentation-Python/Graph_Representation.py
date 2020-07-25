@@ -17,7 +17,7 @@ class Graph(object):
     def insert_node(self, new_node_val):
         new_node = Node(new_node_val)
         self.nodes.append(new_node)
-        
+
     def insert_edge(self, new_edge_val, node_from_val, node_to_val):
         from_found = None
         to_found = None
@@ -39,13 +39,28 @@ class Graph(object):
 
     def get_edge_list(self):
         edge_list = []
+        for i in self.edges:
+            edge_list.append((i.value,i.node_from.value,i.node_to.value))
         return edge_list
 
     def get_adjacency_list(self):
-        adjacency_list = [None] * (max_index + 1)
+        adjacency_list = [None] * (len(self.edges) + 1)
+        adj=self.get_adjacency_matrix()
+        for i in range(len(adj)):
+            li=[]
+            for j in range(len(adj[i])):
+                if adj[i].count(0) != len(self.edges)+1:
+                    if adj[i][j]:
+                        li.append((j,adj[i][j]))
+                else:
+                    break
+            if len(li)!=0:
+                adjacency_list[i]=li
         return adjacency_list
-    
-    
+
+
     def get_adjacency_matrix(self):
-        adjacency_matrix = [[0 for i in range(max_index + 1)] for j in range(max_index + 1)]
+        adjacency_matrix = [[0 for i in range(len(self.edges) + 1)] for j in range(len(self.edges) + 1)]
+        for i in self.edges:
+            adjacency_matrix[i.node_from.value][i.node_to.value]=i.value
         return adjacency_matrix
