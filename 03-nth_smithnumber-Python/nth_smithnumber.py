@@ -24,15 +24,15 @@ def isprime(n) :
 def factors(a):
     li=[]
     while a%2==0:
-        li.append(a)
+        li.append(2)
         a=a//2
 
     for i in range(3, int(math.sqrt(a)) + 1, 2):
         while a % i == 0:
             li.append(i)
-            a = a / i
-        if a>2:
-            li.append(int(a))
+            a = a // i
+    if a>2:
+        li.append(int(a))
     return li
 
 def sumof(n):
@@ -47,7 +47,7 @@ def fun_nth_smithnumber(n):
         i+=1
         digitsum=sumof(i)
         numfactors=factors(i)
-        primesum=sum([sumof(j) for j in numfactors ])
+        primesum=sum([sumof(j) for j in numfactors])
         if digitsum==primesum and isprime(i)==False:
             count+=1
     return (i)
