@@ -10,9 +10,9 @@ def is309(n):
 	return (set(str(i))==li)
 def nthwithproperty309(n):
 	# Your code goes here
-	c=1
+	c=0
 	i=309
-	while (c!=n):
+	while (c<=n):
 		if is309(i):
 			c+=1
 		i+=1
