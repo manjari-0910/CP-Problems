@@ -13,8 +13,8 @@ def leastfrequentletters(s):
 	w=set(s)
 	d={}
 	for i in w:
-		# if i!='':
-		d[i]=s.count(i)
+		if ord(i)>=65 and ord(i)<=122:
+			d[i]=s.count(i)
 	keys=list(d.keys())
 	vals=list(d.values())
 	li=[]
