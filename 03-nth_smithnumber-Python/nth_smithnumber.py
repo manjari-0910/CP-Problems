@@ -44,12 +44,12 @@ def fun_nth_smithnumber(n):
     count=0
     i=4
     while (count<n):
-        i+=4
+        i+=1
         digitsum=sumof(i)
         numfactors=factors(i)
         primesum=sum([sumof(j) for j in numfactors ])
         if digitsum==primesum and isprime(i)==False:
-            c+=1
+            count+=1
     return (i)
 
 
