@@ -17,7 +17,7 @@ def fixmostlymagicsquare(L):
 	for i in L:
 		l1.append(i)
 	for i in range(len(l1)):
-		if l1.count(l1[i])==1:
+		if np.any(l1.count(l1[i])==1):
 			row=i
 			s2=l1[i]
 		else:
