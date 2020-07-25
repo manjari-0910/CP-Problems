@@ -4,7 +4,7 @@
 # 196-algorithm, after the most famous number associated with the process.
 # The first few Lychrel numbers are 196, 295, 394, 493, 592, 689, 691, 788, 790, 879, 887….
 
-MAX_ITERATIONS = 20;
+MAX_ITERATIONS = 25;
 
 # Function to check whether number is
 # Lychrel Number
@@ -26,7 +26,7 @@ def reverse(number):
 
 def nthlychrelnumbers(n):
 	# your code goes here
-	i=1
+	i=196
 	c=0
 	while c<n:
 		if isLychrel(i):
