@@ -7,7 +7,6 @@
 import numpy as np
 
 def fixmostlymagicsquare(L):
-	pass
 	l1=[]
 	l2=[]
 	s1=0
@@ -15,24 +14,23 @@ def fixmostlymagicsquare(L):
 	row=0
 	col=0
 	for i in L:
-		l1.append(i)
+		l1.append(sum(i))
 	for i in range(len(l1)):
-		if np.any(l1.count(l1[i])==1):
+		if (l1.count(l1[i])==1):
 			row=i
 			s2=l1[i]
 		else:
 			s1=l1[i]
 	trans=np.array(L).T
 	for i in trans:
-		l2.append(i)
+		l2.append(sum(i))
 	for i in range(len(l2)):
-		if np.any(l2.count(l2[i])==1):
+		if (l2.count(l2[i])==1):
 			col=i
 	if s2>s1:
 		diff=s2-s1
 	else:
 		diff=s1-s2
-	L[row][col]=l[row][col]-diff
+	L[row][col]=L[row][col]-diff
 	return L
 
-	# Your code goes here
