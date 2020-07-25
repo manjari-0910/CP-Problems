@@ -7,8 +7,10 @@
 def longestdigitrun(n):
 	# Your code goes here
 	n=abs(n)
-	c=m=p=0
-	l1=l2=[]
+	c=0
+	m=0
+	p=0
+	l1,l2=[],[]
 	while (n>0):
 		rem=n%10
 		if rem==p:
