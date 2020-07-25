@@ -40,7 +40,7 @@ def ishappynumber(n):
 	pass
 
 def fun_nth_happy_prime(n):
-	c=0
+	c=-1
 	i=1
 	while c<=n:
 		i+=1
