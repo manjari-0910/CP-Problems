@@ -6,7 +6,7 @@
 # counted twice, thus making 4 a Smith Number.
 # so fun_nthsmithnumber(0) should return 4
 # so fun_nthsmithnumber(1) should return 22
-
+import math
 def isprime(n) :
     if (n <= 1) :
         return False
