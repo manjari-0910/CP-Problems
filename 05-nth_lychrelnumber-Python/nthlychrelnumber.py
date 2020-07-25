@@ -4,24 +4,19 @@
 # 196-algorithm, after the most famous number associated with the process.
 # The first few Lychrel numbers are 196, 295, 394, 493, 592, 689, 691, 788, 790, 879, 887….
 
-MAX_ITERATIONS = 25;
-
-# Function to check whether number is
-# Lychrel Number
-def isLychrel(number):
-
-    for i in range(MAX_ITERATIONS):
-        number = number + reverse(number)
-        if number == reverse(number):
+def isLychrel(num):
+    for i in range(25):
+        num = num + reverse(num)
+        if num == reverse(num):
             return False
     return True
 
-def reverse(number):
+def reverse(num):
     reverse = 0
-    while (number > 0):
-        remainder = number % 10
+    while (num > 0):
+        remainder = num % 10
         reverse = (reverse * 10) + remainder
-        number = int(number / 10)
+        num = int(num / 10)
     return reverse
 
 def nthlychrelnumbers(n):
