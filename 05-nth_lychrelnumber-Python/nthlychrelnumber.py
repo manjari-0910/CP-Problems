@@ -11,30 +11,18 @@ MAX_ITERATIONS = 20;
 def isLychrel(number):
 
     for i in range(MAX_ITERATIONS):
-        number = number + reverse(number);
+        number = number + reverse(number)
+        if number == reverse(number):
+            return False
+    return True
 
-        if (isPalindrome(number)):
-            return "false";
-
-    return "true";
-
-# Function to check whether the number
-# is Palindrome
-def isPalindrome(number):
-
-    return number == reverse(number);
-
-# Function to reverse the number
 def reverse(number):
-
-    reverse = 0;
+    reverse = 0
     while (number > 0):
-
-        remainder = number % 10;
-        reverse = (reverse * 10) + remainder;
-        number = int(number / 10);
-
-    return reverse;
+        remainder = number % 10
+        reverse = (reverse * 10) + remainder
+        number = int(number / 10)
+    return reverse
 
 def nthlychrelnumbers(n):
 	# your code goes here
@@ -44,6 +32,5 @@ def nthlychrelnumbers(n):
 		if isLychrel(i):
 			c+=1
 		i+=1
-
 	return i-1
 	pass
