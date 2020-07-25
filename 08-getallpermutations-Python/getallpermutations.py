@@ -5,6 +5,5 @@ from itertools import permutations
 
 def getallpermutations(x):
 	# Your code goes here
-	li=[p for p in permutations(x)]
-	return li
+	return [p for p in permutations(x)]
 	pass
