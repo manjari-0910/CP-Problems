@@ -46,35 +46,28 @@ def diceToOrderedHand(a, b, c):
 	return (max(a,b,c)*100)+(10*x)+(min(a,b,c))
 
 def playstep2(hand, dice):
-	# your code goes here
-	h = str(hand)
-	arr=list(h)
-	arr.sort()
-	d = str(dice)
-	ans=[]
-	if h.count(h[0])==1 and h.count(h[1])==1:
-		ans.append(arr[-1])
-		ans.append(d[-1])
-		ans.append(d[-2])
-		ans.sort()
-		return int(ans[-1]+ans[-2]+ans[0]),int(d[:-2])
-	elif h.count(h[0])>1:
-		ans.append(h[0])
-		ans.append(h[0])
-		ans.append(d[-1])
-		ans.sort()
-		return int(ans[-1]+ans[-2]+ans[0]),int(d[:-1])
-	elif h.count(h[1])>1:
-		ans.append(h[1])
-		ans.append(h[1])
-		ans.append(d[-1])
-		ans.sort()
-		return int(ans[-1]+ans[-2]+ans[0]),int(d[:-1])
-	pass
+    (a, b, c) = handToDice(hand)
+    if a == b and b == c and a == c:
+        return hand, dice
+    elif a != b and b != c and a != c:
+        a = max(a, b, c)
+        b = dice % 10
+        dice = dice//10
+        c = dice % 10
+        dice = dice//10
+    else:
+        if b == c:
+            a = b
+        elif a == c:
+            b = a
+        c = dice % 10
+        dice = dice // 10
+    hand = diceToOrderedHand(a, b, c)
+    return hand, dice
 
 def score(hand):
 	(a, b, c) = handToDice(hand)
-	if (max(a,b,c) != min(a,b,c)):
+	if (a!=b and b!=c and c!=a):
 		return max(a,b,c)
 	elif(max(a,b,c) == min(a,b,c)):
 		return 20+a+b+c
